@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+venv/
+.venv/
+env/
+.env
+
+# Data (too large for git — use Git LFS or download separately)
+data/*.csv
+data/*.tsv
+data/*.json
+
+# Model artifacts (commit only if <100MB, else use Git LFS)
+# models/best_model.h5     ← uncomment to ignore large model files
+# models/tokenizer.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Streamlit
+.streamlit/secrets.toml
