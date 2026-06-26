@@ -1,0 +1,8 @@
+{
+  "VOCAB_SIZE": 20000,
+  "MAX_LEN": 216,
+  "EMBED_DIM": 128,
+  "LSTM_UNITS": 128,
+  "test_accuracy": 0.998218262806236,
+  "test_auc": 0.9997665291114869
+}
