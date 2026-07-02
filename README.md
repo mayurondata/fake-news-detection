@@ -13,12 +13,12 @@
 
 ## 🎯 Results
 
-| Metric | Score |
-|--------|-------|
-| Test Accuracy | **~99%** |
-| ROC-AUC | **~0.999** |
-| F1 (Fake) | **~0.99** |
-| F1 (Real) | **~0.99** |
+| Metric        | Score      |
+| ------------- | ---------- |
+| Test Accuracy | **~99%**   |
+| ROC-AUC       | **~0.999** |
+| F1 (Fake)     | **~0.99**  |
+| F1 (Real)     | **~0.99**  |
 
 ---
 
@@ -122,6 +122,7 @@ python src/train.py --data_dir data/ --model_dir models/
 ```
 
 Expected output:
+
 ```
 2024-01-01 12:00:00  INFO  Loaded 44,898 articles  (real=21,417, fake=23,481)
 2024-01-01 12:00:05  INFO  Preprocessing text …
@@ -174,9 +175,10 @@ pytest tests/ -v --cov=src
 
 ## 📊 Dataset
 
-**ISOT Fake News Dataset** — University of Victoria, 2018  
-- ~21,400 real articles (Reuters)  
-- ~23,500 fake articles (flagged by PolitiFact & other fact-checkers)  
+**ISOT Fake News Dataset** — University of Victoria, 2018
+
+- ~21,400 real articles (Reuters)
+- ~23,500 fake articles (flagged by PolitiFact & other fact-checkers)
 - Domains: politics, world news, US news
 
 Alternative dataset: [WELFake](https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification) (~72K articles, more diverse sources)
@@ -185,32 +187,44 @@ Alternative dataset: [WELFake](https://www.kaggle.com/datasets/saurabhshahane/fa
 
 ## 🛠 Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Deep Learning | TensorFlow 2 / Keras |
+| Layer             | Technology                   |
+| ----------------- | ---------------------------- |
+| Deep Learning     | TensorFlow 2 / Keras         |
 | NLP Preprocessing | NLTK (stopwords, lemmatizer) |
-| Data | Pandas, NumPy |
-| Visualisation | Matplotlib, Seaborn, Plotly |
-| Web App | Streamlit |
-| Testing | Pytest + pytest-cov |
-| CI/CD | GitHub Actions |
-| Deployment | Streamlit Cloud (free tier) |
+| Data              | Pandas, NumPy                |
+| Visualisation     | Matplotlib, Seaborn, Plotly  |
+| Web App           | Streamlit                    |
+| Testing           | Pytest + pytest-cov          |
+| CI/CD             | GitHub Actions               |
+| Deployment        | Streamlit Cloud (free tier)  |
 
 ---
 
 ## 📈 Training Details
 
-| Parameter | Value |
-|-----------|-------|
-| Vocabulary size | 30,000 |
-| Max sequence length | 512 tokens |
-| Embedding dimension | 128 |
-| LSTM units | 128 (layer 1), 64 (layer 2) |
-| Batch size | 64 |
-| Optimizer | Adam (lr=1e-3) |
-| LR schedule | ReduceLROnPlateau (factor=0.5) |
-| Regularisation | SpatialDropout, L2, EarlyStopping |
-| Early stopping | Monitors val_AUC (patience=3) |
+| Parameter           | Value                             |
+| ------------------- | --------------------------------- |
+| Vocabulary size     | 30,000                            |
+| Max sequence length | 512 tokens                        |
+| Embedding dimension | 128                               |
+| LSTM units          | 128 (layer 1), 64 (layer 2)       |
+| Batch size          | 64                                |
+| Optimizer           | Adam (lr=1e-3)                    |
+| LR schedule         | ReduceLROnPlateau (factor=0.5)    |
+| Regularisation      | SpatialDropout, L2, EarlyStopping |
+| Early stopping      | Monitors val_AUC (patience=3)     |
+
+---
+
+---
+
+## 📸 Streamlit Application
+
+The project includes an interactive Streamlit web application where users can paste or upload a news article and receive an instant prediction along with the model's confidence score.
+
+<p align="center">
+  <img src="artifacts/Screenshot 2026-07-02 181307.png" alt="Fake News Detector Streamlit App" width="900"/>
+</p>
 
 ---
 
@@ -231,6 +245,6 @@ MIT License — see [LICENSE](LICENSE)
 
 ## 🙏 Acknowledgements
 
-- Ahmed H, Traore I, Saad S. — *"Detecting opinion spams and fake news using text classification"* (2018)  
-- [ISOT Research Lab](https://www.uvic.ca/ecs/ece/isot/datasets/fake-news/index.php), University of Victoria  
+- Ahmed H, Traore I, Saad S. — _"Detecting opinion spams and fake news using text classification"_ (2018)
+- [ISOT Research Lab](https://www.uvic.ca/ecs/ece/isot/datasets/fake-news/index.php), University of Victoria
 - Streamlit team for the free deployment platform
